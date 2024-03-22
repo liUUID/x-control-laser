@@ -1,0 +1,11 @@
+POST http://localhost:10086/xControl
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-19T125905.400.json
+
+###
+

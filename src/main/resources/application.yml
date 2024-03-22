@@ -1,0 +1,19 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: x-control-laser
+    version: 0.0.1
+  profiles:
+    active: dev # 控制板参数全部添加到dev层
+  datasource:
+    url: jdbc:mysql://60.204.251.88:3308/x-contro-laser?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    password: admin123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    name: HUAWEI
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: x.control.laser.domain

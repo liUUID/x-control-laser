@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="x-control-laser (3)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/x-control-laser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

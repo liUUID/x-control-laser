@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="x.control.laser.dao.ControlModelDao">
+
+    <resultMap type="x.control.laser.entity.ControlModel" id="ControlModelMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="control" column="control" jdbcType="INTEGER"/>
+        <result property="ip" column="ip" jdbcType="VARCHAR"/>
+        <result property="port" column="port" jdbcType="INTEGER"/>
+        <result property="controlId" column="control_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into x-contro-laser.control_model(namenumbercontrolipportcontrol_id)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}#{entity.number}#{entity.control}#{entity.ip}#{entity.port}#{entity.controlId})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into x-contro-laser.control_model(namenumbercontrolipportcontrol_id)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}#{entity.number}#{entity.control}#{entity.ip}#{entity.port}#{entity.controlId})
+        </foreach>
+        on duplicate key update
+        name = values(name) number = values(number) control = values(control) ip = values(ip) port = values(port)
+        control_id = values(control_id)
+    </insert>
+
+</mapper>
+

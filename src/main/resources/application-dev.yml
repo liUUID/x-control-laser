@@ -1,0 +1,16 @@
+x-control:
+  laser-port: 123456  # 激光端口
+  laser-type: SingleOpening # 协议类型 SingleOpening  combination
+  commend:   # 具体的控制板集合
+    - number: 1
+      control: 1
+      ip: 192.168.0.11
+      port: 12345
+    - number: 2
+      control: 1
+      ip: 192.168.0.12
+      port: 12345
+    - number: 3
+      control: 1
+      ip: 192.168.0.13
+      port: 12345
